@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,400');
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body {
+  font-family: 'Raleway','Lucida Sans', Geneva, Verdana, sans-serif !important;
+  font-weight: 100 !important;
   padding: 0;
   margin: 0;
 }//body
