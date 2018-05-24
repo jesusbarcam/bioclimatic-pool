@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PoolsSectionComponent implements OnInit {
 
+  private splashImageUrl: String = '../../../../../assets/images/splash.jpg';
 
   /**
    * @method
