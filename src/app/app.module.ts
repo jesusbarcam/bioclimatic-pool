@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PoolsModule } from './modules/pools/pools.module';
 import { PoolsSectionComponent } from './modules/pools/components/pools-section/pools-section.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
