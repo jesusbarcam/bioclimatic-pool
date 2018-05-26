@@ -17,9 +17,9 @@
       "dom"
     ],
     "paths": {
-      "bioh-material": [
-        "dist/bioh-material"
-      ]
+      "assets": [ "src/assets" ],
+      "services": [ "src/app/services" ],
+      "bioh-material": [ "dist/bioh-material" ]
     }
   }
 }

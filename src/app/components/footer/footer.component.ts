@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
+import { ApplicationSettingsService } from 'services';
+
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent implements OnInit {
 
 
+  constructor() {
+  }// Constructor
 
-  constructor() { }
 
   ngOnInit() {
-  }
-
+  }// NgOnInit
 
 
   public get currentYear() {
@@ -21,7 +25,7 @@ export class FooterComponent implements OnInit {
   }// CurrentYear
 
   public get currentVersion() {
-    return '1.0.0-Demo';
+    return ApplicationSettingsService.APPLICATION_VERSION;
   }// CurrentVersion
 
 }// FooterComponent
