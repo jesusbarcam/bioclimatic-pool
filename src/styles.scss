@@ -1,11 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400');
 @import "variables";
 
 body {
-  font-family: $fontFamily;
-  font-weight: 300;
+  font-family: $fontFamily !important;
+  font-weight: 100 !important;
   padding: 0;
   margin: 0;
 }//body
+
+
+
+.debug {
+  border: 1px solid violet !important;
+}//debug
