@@ -1,4 +1,7 @@
 
+@import 'variables';
+
+
 .image-splash {
   height: 800px;
   width: 100%;
@@ -39,9 +42,8 @@
 .head-summary-wrapper {
   
   .head-summary {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 6rem;
     font-weight: bolder;
-    color: #81fca0;
+    color: $color-company;
   }//head-summary
 }//head-summary-wrapper

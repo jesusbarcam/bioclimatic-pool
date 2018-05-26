@@ -1,6 +1,6 @@
-
+@import "variables";
 $height_header: 5.5rem;
-$color_background: #439dce;
+
 
 .header-wrapper {
   position: fixed;
@@ -9,7 +9,7 @@ $color_background: #439dce;
   top:0;
   left:0;
   right:0;
-  background-color: rgba($color_background,0.53);
+  background-color: rgba($color-app,0.53);
 
   .header-container {
     height: $height_header;
