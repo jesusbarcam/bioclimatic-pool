@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
+import { ApplicationSettingsService } from 'services';
+
 @Component({
   selector: 'pools-section',
   templateUrl: './pools-section.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class PoolsSectionComponent implements OnInit {
 
-  private splashImageUrl: String = '../../../../../assets/images/splash.jpg';
+
   private readonly STOP_SCROLL_IMAGE_LIMIT_TOP_POSITION: number = 638;
   private _stopTopImage: boolean;
 
@@ -37,6 +39,10 @@ export class PoolsSectionComponent implements OnInit {
   ngOnInit() {
   }// NgOnInit
 
+
+  public get splashImageUrl() {
+    return ApplicationSettingsService.SPLASH_IMAGE_URL;
+  }// SplashImageUrl
 
   public get stopTopImage() {
     return this._stopTopImage;
