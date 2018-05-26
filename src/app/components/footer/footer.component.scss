@@ -39,6 +39,36 @@ $opacity-text: 0.7;
 
 
 
+.company-legal-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .company-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
+    p {
+      @extend .font-paragraph;
+      margin-bottom: 0 !important;
+    }//p
+
+    a span {
+      @extend .font-paragraph;
+      opacity: $opacity-text;
+    }//span
+
+    a:hover {
+      cursor:pointer;
+      text-decoration: underline;
+    }//a:hover
+
+  }//company-legal
+}
+
+
+
 .delimiter-line {
   @include delimiterLine( $color-light );
 }//delimiter-line
@@ -51,3 +81,6 @@ $opacity-text: 0.7;
   justify-content: space-between;
   opacity: $opacity-text;
 }//legal-info-container
+
+
+
