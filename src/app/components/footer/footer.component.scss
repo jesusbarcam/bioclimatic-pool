@@ -1,0 +1,86 @@
+
+@import "variables";
+@import "classes";
+@import "mixins";
+
+$opacity-text: 0.7;
+
+
+.footer-wrapper {
+  width: 100%;
+  font-weight: 100 !important;
+  padding: 2rem 0rem;
+  color: $color-light;
+  background-color: $color-dark;
+}//footer-wrapper
+
+
+
+.company-address-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .company-address {
+    @extend .font-paragraph;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    p {
+      @extend .font-paragraph;
+      margin-bottom: 0 !important;
+    }//p
+
+    span {
+      opacity: $opacity-text;
+    }//contact
+  }//company-address
+}//company-address-wrapper 
+
+
+
+.company-legal-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .company-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
+    p {
+      @extend .font-paragraph;
+      margin-bottom: 0 !important;
+    }//p
+
+    a span {
+      @extend .font-paragraph;
+      opacity: $opacity-text;
+    }//span
+
+    a:hover {
+      cursor:pointer;
+      text-decoration: underline;
+    }//a:hover
+
+  }//company-legal
+}
+
+
+
+.delimiter-line {
+  @include delimiterLine( $color-light );
+}//delimiter-line
+
+
+.legal-info-container {
+  @extend .font-detail;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: $opacity-text;
+}//legal-info-container
+
+
+

@@ -1,0 +1,13 @@
+{
+  "COMMONS":{},
+  "HEADER":{},
+  "POOL_MODULE":{},
+  "FOOTER":{
+    "WHERE_WE_ARE":"Where we are",
+    "LEGAL_CONDITIONS":"Legal Conditions",
+    "TERMS":"Terms",
+    "PRIVACY":"Privacy",
+    "COOKIES":"Cookies",
+    "COPYRIGHT_LABEL":"All Rights Reserved"
+  }
+}
