@@ -1,5 +1,11 @@
 
 
-.debug {
-  border:2px solid lightseagreen;
-}
+.app-header-wrapper {
+  position: fixed;
+  z-index: 500;
+}//app-header-wrapper
+
+
+.pools-section-wrapper {
+  z-index: 0;
+}//pools-section-wrapper

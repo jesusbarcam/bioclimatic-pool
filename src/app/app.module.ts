@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PoolsModule } from './modules/pools/pools.module';
 import { PoolsSectionComponent } from './modules/pools/components/pools-section/pools-section.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PoolsSectionComponent } from './modules/pools/components/pools-section/
     PoolsModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
