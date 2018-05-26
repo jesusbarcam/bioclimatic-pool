@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'pools-section',
@@ -8,6 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class PoolsSectionComponent implements OnInit {
 
   private splashImageUrl: String = '../../../../../assets/images/splash.jpg';
+  private readonly STOP_SCROLL_IMAGE_LIMIT_TOP_POSITION: number = 638;
+  private _stopTopImage: boolean;
+
+
+
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    console.log(window.pageYOffset);
+    this._stopTopImage = ( window.pageYOffset > this.STOP_SCROLL_IMAGE_LIMIT_TOP_POSITION);
+  }// OnWindowScroll
+
+
 
   /**
    * @method
@@ -23,5 +36,10 @@ export class PoolsSectionComponent implements OnInit {
    */
   ngOnInit() {
   }// NgOnInit
+
+
+  public get stopTopImage() {
+    return this._stopTopImage;
+  }// StopTopImage
 
 }// PoolsSectionComponent
