@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+// Add google fonts to application Raleway is we option
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400');
+
 @import "variables";
+
 
 body {
   font-family: $fontFamily !important;
