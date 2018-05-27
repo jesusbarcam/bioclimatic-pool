@@ -1,4 +1,6 @@
 @import "variables";
+
+
 $height_header: 5.5rem;
 
 
@@ -30,7 +32,62 @@ $height_header: 5.5rem;
 
 
 
-.bioh-logo {
 
-}//bioh-logo
+// Media query work to down of xl
+@media (max-width: $xl) {
+  img.bioh-logo {
+    width: 700px !important;
+  }//bioh-logo
+}//media(xxl)
+
+
+
+@media (max-width: $lg) {
+  .company-name {
+    display: none !important;
+  }//company-name
+
+  .header-container {
+    display: flex;
+    justify-content: center !important;
+  }//header-wrapper
+}//media(md)
+
+
+
+@media (max-width: $md){
+  .header-wrapper {
+    height: 4rem;
+  }//header-wrapper
+  img.bioh-logo {
+    width: 550px !important;
+    margin-bottom: 3rem !important;
+  }//bioh-logo
+}//media(md)
+
+
+
+@media (max-width: $sm){
+  .header-wrapper {
+    height: 3.8rem;
+  }//header-wrapper
+  img.bioh-logo {
+    width: 450px !important;
+  }//bioh-logo
+}//media(sm)
+
+
+
+@media (max-width: $xs){
+  .header-wrapper {
+    height: 3rem;
+  }//header-wrapper
+  img.bioh-logo {
+    width: 350px !important;
+  }//bioh-logo
+}//media(sm)
+
+
+
+
 
