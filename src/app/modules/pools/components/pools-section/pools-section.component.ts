@@ -48,4 +48,8 @@ export class PoolsSectionComponent implements OnInit {
     return this._stopTopImage;
   }// StopTopImage
 
+  public get stepsToPoolBuild() {
+    return '../../../../../assets/images/stepsBuildPool.jpg';
+  }// StepsToPoolBuild
+
 }// PoolsSectionComponent
