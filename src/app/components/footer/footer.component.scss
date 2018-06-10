@@ -15,6 +15,21 @@ $opacity-text: 0.7;
 }//footer-wrapper
 
 
+.company-logo-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .company-logo {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }//company-logo
+
+}//company-logo-wrapper
+
+
 
 .company-address-wrapper {
   display: flex;

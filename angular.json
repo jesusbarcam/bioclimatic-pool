@@ -34,7 +34,8 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/style-sass"
-            ]}
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -119,6 +120,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "bioh-material": {
+      "root": "projects/bioh-material",
+      "sourceRoot": "projects/bioh-material/src",
+      "projectType": "library",
+      "prefix": "bioh",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/bioh-material/tsconfig.lib.json",
+            "project": "projects/bioh-material/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/bioh-material/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bioh-material/src/test.ts",
+            "tsConfig": "projects/bioh-material/tsconfig.spec.json",
+            "karmaConfig": "projects/bioh-material/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/bioh-material/tsconfig.lib.json",
+              "projects/bioh-material/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

@@ -1,7 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400');
 @import "variables";
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(./assets/fonts/raleway/Raleway-Thin.ttf);
+  font-style: normal;
+  font-weight: 100;
+}//@font-face
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(./assets/fonts/raleway/Raleway-Light.ttf);
+  font-style: normal;
+  font-weight: 300;
+}//@font-face
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(./assets/fonts/raleway/Raleway-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+}//@font-face
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(./assets/fonts/raleway/Raleway-ExtraBold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}//@font-face
+
 
 body {
   font-family: $fontFamily !important;
