@@ -5,6 +5,7 @@ import { FacebookModule } from 'ngx-facebook';
 import { BiohLogotypeComponent } from './components/logotype/logotype.component';
 import { BiohSocialmediaComponent } from './components/socialmedia/socialmedia.component';
 import { BiohSummaryComponent } from './components/summary/summary.component';
+import { BiohIconSummaryComponent } from './components/icon-summary/icon-summary.component';
 
 
 
@@ -16,13 +17,17 @@ import { BiohSummaryComponent } from './components/summary/summary.component';
   declarations: [
     BiohLogotypeComponent,
     BiohSocialmediaComponent,
-    BiohSummaryComponent
+    BiohSummaryComponent,
+    BiohIconSummaryComponent
   ],
   exports: [
     BiohLogotypeComponent,
     BiohSocialmediaComponent,
-    BiohSummaryComponent
+    BiohSummaryComponent,
+    BiohIconSummaryComponent
   ]
 })
+
+
 export class BiohMaterialModule {
 }// BiohMaterialModule
