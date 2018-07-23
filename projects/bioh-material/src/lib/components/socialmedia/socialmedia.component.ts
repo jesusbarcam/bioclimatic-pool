@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
-import { FacebookService, InitParams, LoginResponse } from 'ngx-facebook';
+
 
 @Component({
   selector: 'bioh-socialmedia',
