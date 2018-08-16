@@ -6,6 +6,7 @@ import { BiohSocialmediaComponent } from './components/socialmedia/socialmedia.c
 import { BiohSummaryComponent } from './components/summary/summary.component';
 import { BiohIconSummaryComponent } from './components/icon-summary/icon-summary.component';
 import { BiohWallpaperComponent } from './components/wallpaper/bioh-wallpaper.component';
+import { BiohSelectComponent } from './components/select/select.component';
 
 
 
@@ -18,14 +19,16 @@ import { BiohWallpaperComponent } from './components/wallpaper/bioh-wallpaper.co
     BiohSocialmediaComponent,
     BiohSummaryComponent,
     BiohIconSummaryComponent,
-    BiohWallpaperComponent
+    BiohWallpaperComponent,
+    BiohSelectComponent
   ],
   exports: [
     BiohLogotypeComponent,
     BiohSocialmediaComponent,
     BiohSummaryComponent,
     BiohIconSummaryComponent,
-    BiohWallpaperComponent
+    BiohWallpaperComponent,
+    BiohSelectComponent
   ]
 })
 
