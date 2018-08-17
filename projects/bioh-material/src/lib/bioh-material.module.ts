@@ -7,6 +7,7 @@ import { BiohSummaryComponent } from './components/summary/summary.component';
 import { BiohIconSummaryComponent } from './components/icon-summary/icon-summary.component';
 import { BiohWallpaperComponent } from './components/wallpaper/bioh-wallpaper.component';
 import { BiohSelectComponent } from './components/select/select.component';
+import { BiohOptionSelectComponent } from './components/option-select/option-select.component';
 
 
 
@@ -20,7 +21,8 @@ import { BiohSelectComponent } from './components/select/select.component';
     BiohSummaryComponent,
     BiohIconSummaryComponent,
     BiohWallpaperComponent,
-    BiohSelectComponent
+    BiohSelectComponent,
+    BiohOptionSelectComponent
   ],
   exports: [
     BiohLogotypeComponent,
@@ -28,7 +30,8 @@ import { BiohSelectComponent } from './components/select/select.component';
     BiohSummaryComponent,
     BiohIconSummaryComponent,
     BiohWallpaperComponent,
-    BiohSelectComponent
+    BiohSelectComponent,
+    BiohOptionSelectComponent
   ]
 })
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { ApplicationSettingsService } from 'services';
+import { BiohOptionSelect } from 'bioh-material';
 
 
 @Component({
@@ -27,5 +28,17 @@ export class FooterComponent implements OnInit {
   public get currentVersion() {
     return ApplicationSettingsService.APPLICATION_VERSION;
   }// CurrentVersion
+
+  public get defaultLabel() {
+    return 'Selecciona idioma';
+  }// DefaultLabel
+
+  public get options() {
+    return [
+      new BiohOptionSelect('Ingles'),
+      new BiohOptionSelect('Español'),
+      new BiohOptionSelect('Rumano')
+    ];
+  }
 
 }// FooterComponent

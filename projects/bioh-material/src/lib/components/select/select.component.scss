@@ -1,0 +1,33 @@
+@import '../../../styles/_variables.scss';
+
+
+.options-button {
+  border:0 !important;
+  outline: none !important;
+  padding: 0.5rem 1rem;
+  color: $fontSize-widget;
+  background-color: $color-widget;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: dark($color-widget, 10);
+  }//hover
+
+}//options-button
+
+
+
+.options-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .option-wrapper {
+    height: 100%;
+    width: 100%;
+  }//option-wrapper
+
+}//options-container
