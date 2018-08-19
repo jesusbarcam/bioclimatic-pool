@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter,
   ChangeDetectorRef, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
 import * as Tether from 'tether';
 
 import { BiohOptionSelect } from '../../models/option-select';
@@ -51,6 +52,7 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.managePositioningOptionsContainer();
+    this.manageIfHaveOptionSelected();
   }// NgOnInit
 
 
@@ -88,6 +90,29 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
    * @method
    * @description
    */
+  private manageIfHaveOptionSelected() {
+    if ( this.options && this.options.length > 0 ) {
+      let selectedOption = null;
+      this.options.forEach((option) => {
+        if ( option.selected && !selectedOption ) {
+          selectedOption = option;
+        }// If
+      });
+
+      if ( selectedOption ) {
+        this._selectedOption = selectedOption;
+        this.changeDetector.markForCheck();
+      }// If
+
+    }// If
+  }// ManageIfHaveOptionSelected
+
+
+
+  /**
+   * @method
+   * @description
+   */
   private manageSelectElementWidth() {
     if ( this.selectButton ) {
       const newWidth = this.selectButton.nativeElement.clientWidth || BiohSelectComponent.DEFAULT_WIDTH_OF_SELECT;
@@ -114,11 +139,14 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
    * @description
    */
   private resetOptions() {
-    if ( this.options ) {
-      this.options.forEach((option) => {
-        option.selected = false;
-      }); // ForEach
-    }// If
+    return new Observable((observer) => {
+      if ( this.options ) {
+        this.options.forEach((option) => {
+          option.selected = false;
+        }); // ForEach
+      }// If
+      observer.next();
+    });
   }// ResetOptions
 
 
@@ -129,10 +157,11 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
    * @description
    */
   public select(option: BiohOptionSelect) {
-    this.resetOptions();
-    this._selectedOption = option;
-    this.changeDetector.markForCheck();
-    this.selectOption.emit( this._selectedOption );
+    this.resetOptions().subscribe(() => {
+      this._selectedOption = option;
+      this.changeDetector.markForCheck();
+      this.selectOption.emit( this._selectedOption );
+    });
   }// Select
 
 

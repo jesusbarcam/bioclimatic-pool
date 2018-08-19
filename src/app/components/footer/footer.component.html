@@ -56,7 +56,7 @@
           
           
           <span>
-            <bioh-select [options]=" options " [defaultLabel]=" defaultLabel "></bioh-select>
+            <bioh-select [options]=" options " (selectOption)="changeLanguage($event)"></bioh-select>
           </span>
           
 
