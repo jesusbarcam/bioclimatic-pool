@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter,
+  ChangeDetectorRef, ViewChild, AfterViewChecked, ElementRef } from '@angular/core';
 
 import { BiohOptionSelect } from '../../models/option-select';
 
@@ -9,11 +10,14 @@ import { BiohOptionSelect } from '../../models/option-select';
   styleUrls: ['./select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BiohSelectComponent implements OnInit {
+export class BiohSelectComponent implements OnInit, AfterViewChecked {
 
+  
   public static readonly DEFAULT_LABEL: string = 'Select';
+  public static readonly DEFAULT_WIDTH_OF_SELECT: number = 100;
 
   private _showOptions: boolean;
+  private _elementWidth: number;
   private _selectedOption: BiohOptionSelect;
 
   @Input()
@@ -25,6 +29,8 @@ export class BiohSelectComponent implements OnInit {
   @Output()
   public selectOption: EventEmitter<BiohOptionSelect>;
 
+  @ViewChild('selectButton')
+  public selectButton: ElementRef;
 
 
   constructor(private changeDetector: ChangeDetectorRef) {
@@ -44,6 +50,25 @@ export class BiohSelectComponent implements OnInit {
 
   ngOnInit() {
   }// NgOnInit
+
+
+  ngAfterViewChecked(): void {
+    this.manageSelectElementWidth();
+  }// NgAfterViewChecked
+
+
+
+  /**
+   * @method
+   * @description
+   */
+  private manageSelectElementWidth() {
+    if ( this.selectButton ) {
+      const newWidth = this.selectButton.nativeElement.clientWidth || BiohSelectComponent.DEFAULT_WIDTH_OF_SELECT;
+      const currentWidth = this._elementWidth || BiohSelectComponent.DEFAULT_WIDTH_OF_SELECT;
+      this._elementWidth = (newWidth > currentWidth) ? newWidth : currentWidth;
+    }// If
+  }// ManageSelectElementWidth
 
 
 
@@ -98,6 +123,9 @@ export class BiohSelectComponent implements OnInit {
     return this._selectedOption;
   }// SelectedOption
 
+  public get elementWidth() {
+    return this._elementWidth;
+  }// ElementWidth
 
 }// BiohSelectComponent
 

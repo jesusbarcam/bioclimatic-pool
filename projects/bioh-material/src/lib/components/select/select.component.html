@@ -1,9 +1,9 @@
 <div>
-  <button class="options-button" (click)=" openOptionsContainer() ">
+  <button #selectButton class="options-button" (click)=" openOptionsContainer() " [style.min-width]=" elementWidth + 'px' ">
     <span *ngIf="selectedOption;else defaultLabelTemplate">{{ selectedOption.label }}</span>
     <ng-template #defaultLabelTemplate>{{ defaultLabel }}</ng-template>
   </button>
-  <div class="options-container" [hidden]=" !showOptions ">
+  <div class="options-container" [hidden]=" !showOptions " [style.min-width]=" elementWidth + 'px' ">
     <div class="option-wrapper" *ngFor="let option of options" (click)=" select( option ) ">
       <bioh-option-select [option]=" option " [selected]=" isSelectedThisOption( option ) "></bioh-option-select>
     </div>
