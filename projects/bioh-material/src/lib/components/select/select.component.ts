@@ -18,6 +18,7 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
 
   private _showOptions: boolean;
   private _elementWidth: number;
+  private _tether: any;
   private _selectedOption: BiohOptionSelect;
 
   @Input()
@@ -66,7 +67,7 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
    */
   private managePositioningOptionsContainer() {
     setTimeout(() => {
-      const tether = new Tether({
+      this._tether = new Tether({
         element: '.bioh-options-container',
         target: '.bioh-select-button',
         attachment: 'top left',
@@ -103,6 +104,7 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
    */
   public openOptionsContainer() {
     this._showOptions = !this._showOptions;
+    this.managePositioningOptionsContainer();
   }// OpenOptionsContainer
 
 
