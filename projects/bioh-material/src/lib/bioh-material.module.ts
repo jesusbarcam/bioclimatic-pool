@@ -9,6 +9,8 @@ import { BiohWallpaperComponent } from './components/wallpaper/bioh-wallpaper.co
 import { BiohSelectComponent } from './components/select/select.component';
 import { BiohOptionSelectComponent } from './components/option-select/option-select.component';
 
+import { BiohClickOutsideDirective } from './directives/clickOutside/clickOutside.directive';
+
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { BiohOptionSelectComponent } from './components/option-select/option-sel
     BiohIconSummaryComponent,
     BiohWallpaperComponent,
     BiohSelectComponent,
-    BiohOptionSelectComponent
+    BiohOptionSelectComponent,
+    BiohClickOutsideDirective
   ],
   exports: [
     BiohLogotypeComponent,
@@ -31,7 +34,8 @@ import { BiohOptionSelectComponent } from './components/option-select/option-sel
     BiohIconSummaryComponent,
     BiohWallpaperComponent,
     BiohSelectComponent,
-    BiohOptionSelectComponent
+    BiohOptionSelectComponent,
+    BiohClickOutsideDirective
   ]
 })
 

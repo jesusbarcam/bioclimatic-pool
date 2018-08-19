@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter,
-  ChangeDetectorRef, ViewChild, AfterViewChecked, ElementRef } from '@angular/core';
+  ChangeDetectorRef, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import * as Tether from 'tether';
 
 import { BiohOptionSelect } from '../../models/option-select';
 
@@ -10,9 +11,8 @@ import { BiohOptionSelect } from '../../models/option-select';
   styleUrls: ['./select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BiohSelectComponent implements OnInit, AfterViewChecked {
+export class BiohSelectComponent implements OnInit, AfterViewInit {
 
-  
   public static readonly DEFAULT_LABEL: string = 'Select';
   public static readonly DEFAULT_WIDTH_OF_SELECT: number = 100;
 
@@ -49,12 +49,37 @@ export class BiohSelectComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit() {
+    this.managePositioningOptionsContainer();
   }// NgOnInit
 
 
-  ngAfterViewChecked(): void {
+
+  ngAfterViewInit(): void {
     this.manageSelectElementWidth();
-  }// NgAfterViewChecked
+  }// NgAfterViewInit
+
+
+
+  /**
+   * @method
+   * @description
+   */
+  private managePositioningOptionsContainer() {
+    setTimeout(() => {
+      const tether = new Tether({
+        element: '.bioh-options-container',
+        target: '.bioh-select-button',
+        attachment: 'top left',
+        targetAttachment: 'bottom left',
+        constraints: [{
+          to: 'scrollParent'
+        }, {
+          to: 'window',
+          attachment: 'together'
+        }]
+      });
+    }, 10);
+  }// ManagePositioningOptionsContainer
 
 
 
@@ -110,9 +135,21 @@ export class BiohSelectComponent implements OnInit, AfterViewChecked {
 
 
 
+  /**
+   * @method
+   * @description
+   */
+  public onClickOutside() {
+    this._showOptions = false;
+    this.changeDetector.markForCheck();
+  }// OnClickOutside
+
+
+
   public isSelectedThisOption(option: BiohOptionSelect) {
     return ((this._selectedOption) && (option.label === this._selectedOption.label));
   }// IsSelectedThisOption
+
 
 
   public get showOptions() {

@@ -2,6 +2,8 @@
 
 
 p {
+  font-family: $fontFamily;
+  font-size: $fontSize-widget;
   width: 100% !important;
   padding: 0.5rem 1rem;
   color: $color-widget-text;

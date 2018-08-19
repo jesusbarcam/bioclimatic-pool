@@ -2,10 +2,12 @@
 
 
 .options-button {
+  font-family: $fontFamily;
+  font-size: $fontSize-widget;
   border:0 !important;
   outline: none !important;
   padding: 0.5rem 1rem;
-  color: $fontSize-widget;
+  color: #000;
   background-color: $color-widget;
   border-radius: 3px;
   text-align: left;
