@@ -1,0 +1,36 @@
+@import '../../../styles/_variables.scss';
+
+
+.options-button {
+  font-family: $fontFamily;
+  font-size: $fontSize-widget;
+  border:0 !important;
+  outline: none !important;
+  padding: 0.5rem 1rem;
+  color: #000;
+  background-color: $color-widget;
+  border-radius: 3px;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+    background-color: dark($color-widget, 10);
+  }//hover
+
+}//options-button
+
+
+
+.options-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .option-wrapper {
+    height: 100%;
+    width: 100%;
+  }//option-wrapper
+
+}//options-container

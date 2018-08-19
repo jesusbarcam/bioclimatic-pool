@@ -11,6 +11,7 @@ import { PoolsModule } from './modules/pools/pools.module';
 import { PoolsSectionComponent } from './modules/pools/components/pools-section/pools-section.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ClickoutsideComponent } from './directives/clickoutside/clickoutside.component';
 
 
 // AoT requires an exported function for factories
@@ -37,7 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ClickoutsideComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

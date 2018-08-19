@@ -6,6 +6,10 @@ import { BiohSocialmediaComponent } from './components/socialmedia/socialmedia.c
 import { BiohSummaryComponent } from './components/summary/summary.component';
 import { BiohIconSummaryComponent } from './components/icon-summary/icon-summary.component';
 import { BiohWallpaperComponent } from './components/wallpaper/bioh-wallpaper.component';
+import { BiohSelectComponent } from './components/select/select.component';
+import { BiohOptionSelectComponent } from './components/option-select/option-select.component';
+
+import { BiohClickOutsideDirective } from './directives/clickOutside/clickOutside.directive';
 
 
 
@@ -18,14 +22,20 @@ import { BiohWallpaperComponent } from './components/wallpaper/bioh-wallpaper.co
     BiohSocialmediaComponent,
     BiohSummaryComponent,
     BiohIconSummaryComponent,
-    BiohWallpaperComponent
+    BiohWallpaperComponent,
+    BiohSelectComponent,
+    BiohOptionSelectComponent,
+    BiohClickOutsideDirective
   ],
   exports: [
     BiohLogotypeComponent,
     BiohSocialmediaComponent,
     BiohSummaryComponent,
     BiohIconSummaryComponent,
-    BiohWallpaperComponent
+    BiohWallpaperComponent,
+    BiohSelectComponent,
+    BiohOptionSelectComponent,
+    BiohClickOutsideDirective
   ]
 })
 
