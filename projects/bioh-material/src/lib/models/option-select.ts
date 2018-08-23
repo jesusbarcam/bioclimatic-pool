@@ -7,14 +7,16 @@ export class BiohOptionSelect {
 
 
   private _label: string;
-  private _payload: any;
+  private _value: string;
   private _selected: boolean;
+  private _payload: any;
 
 
-  constructor (label: string, payload?: any, selected?: boolean) {
+  constructor (label: string, value?: string, selected?: boolean, payload?: any) {
     this._label = label || undefined;
-    this._payload = payload || undefined;
+    this._value = value || undefined;
     this._selected = selected || false;
+    this._payload = payload || undefined;
   }// Constructor
 
 
@@ -41,6 +43,14 @@ export class BiohOptionSelect {
   public set selected(newState: boolean) {
     this._selected = newState;
   }// Selected
+
+  public get value() {
+    return this._value;
+  }// Payload
+
+  public set value(newValue: string) {
+    this._value = newValue;
+  }// Value
 
 }// BiohOptionSelect
 
