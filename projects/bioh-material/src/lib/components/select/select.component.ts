@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, ChangeDetectionStrategy, EventEmitter,
-  ChangeDetectorRef, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, ChangeDetectionStrategy, EventEmitter,
+  ChangeDetectorRef, ViewChild, AfterViewInit, ElementRef, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as Tether from 'tether';
 
@@ -12,7 +12,7 @@ import { BiohOptionSelect } from '../../models/option-select';
   styleUrls: ['./select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BiohSelectComponent implements OnInit, AfterViewInit {
+export class BiohSelectComponent implements OnInit, OnChanges, AfterViewInit {
 
   public static readonly DEFAULT_LABEL: string = 'Select';
   public static readonly DEFAULT_WIDTH_OF_SELECT: number = 100;
@@ -54,6 +54,14 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
     this.managePositioningOptionsContainer();
     this.manageIfHaveOptionSelected();
   }// NgOnInit
+
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ( changes.options && !changes.options.isFirstChange() ) {
+      this.manageIfHaveOptionSelected();
+    }// If
+  }// NgOnChanges
 
 
 
@@ -178,7 +186,7 @@ export class BiohSelectComponent implements OnInit, AfterViewInit {
 
 
   public isSelectedThisOption(option: BiohOptionSelect) {
-    return ((this._selectedOption) && (option.label === this._selectedOption.label));
+    return ((this._selectedOption) && (option.value === this._selectedOption.value));
   }// IsSelectedThisOption
 
 
